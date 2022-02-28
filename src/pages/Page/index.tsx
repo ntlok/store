@@ -1,7 +1,5 @@
-import react from 'react';
+import react from "react";
 
 export function Page() {
-  return (
-    <p>estamos no page</p>
-  )
+  return <p>estamos no page</p>;
 }

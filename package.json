@@ -2,6 +2,7 @@
   "name": "store",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://ntlok.github.io/store/",
   "dependencies": {
     "@fontsource/source-sans-pro": "^4.5.1",
     "@reduxjs/toolkit": "^1.7.1",
@@ -70,25 +71,12 @@
     "workbox-streams": "^6.4.2"
   },
   "scripts": {
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "analyze": "source-map-explorer \"build/static/js/*.js\"",
-    "format": "prettier \"**/*.{css,html,js,jsx,json,less,md,scss,ts,tsx,yml}\" -c -w",
-    "icons": "pwa-asset-generator \"src/assets/images/icons/logo.svg\" \"public/static/images/icons\" -f -i \"public/index.html\" -m \"public/manifest.json\" -o false -t png -v \"static/images/icons\"",
-    "lint": "yarn lint:eslint && npm run lint:stylelint",
-    "lint:eslint": "eslint \"**/*.{js,jsx,ts,tsx}\"",
-    "lint:stylelint": "stylelint \"**/*.{css,less,scss}\"",
-    "prebuild": "yarn format && npm run lint && npm run test:ci",
-    "serve": "serve build -s",
-    "serve:https": "serve build -s --ssl-cert \"src/config/ssl/cert.pem\" --ssl-key \"src/config/ssl/key.pem\"",
-    "setup": "yarn setup:husky && npm run setup:ssl",
-    "setup:husky": "husky install && husky add \".husky/pre-commit\" \"npx --no-install lint-staged\"",
-    "setup:ssl": "mkdirp \"src/config/ssl\" && mkcert -cert-file \"src/config/ssl/cert.pem\" -key-file \"src/config/ssl/key.pem\" localhost",
-    "test:ci": "cross-env CI=true yarn test --env=jsdom",
-    "test:coverage": "cross-env CI=true yarn test -- --coverage",
-    "test:debug": "react-scripts --inspect-brk test --runInBand"
+    "test": "react-scripts test"
+    
   },
   "eslintConfig": {},
   "browserslist": [
@@ -96,5 +84,9 @@
     "defaults ",
     "not IE 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "gh-pages": "^3.2.3"
+  }
 }

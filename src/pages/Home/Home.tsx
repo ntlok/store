@@ -1,5 +1,3 @@
-import react from 'react';
+import react from "react";
 
-export const Home = () => (
-  <p>home</p>
-)
+export const Home = () => <p>home</p>;
