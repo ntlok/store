@@ -1,10 +1,10 @@
-import { BrowserRouter } from "react-router-dom";
-import { Routes } from "../Routes/Routes";
+import { HashRouter } from "react-router-dom";
+import { Routex } from "../Routes/Routes";
 
 export function App() {
   return (
-    <BrowserRouter>
-      <Routes />
-    </BrowserRouter>
+    <HashRouter basename="/">
+      <Routex />
+    </HashRouter>
   );
 }
